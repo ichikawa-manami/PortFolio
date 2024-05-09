@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <title>Sign in</title>
+		
+		<link rel = "stylesheet" href="./css/signin.css">
+		
+	</head>
+	
+<body>
+	<div class="header">
+		<h1>My PortFolio</h1>
+	</div>
+	
+    <div class="container">
+        <div th:if="${validationError}" th:each="error : ${validationError}">
+            <label class="text-danger" th:text="${error}"></label>
+        </div>
+		    <h2>新規登録</h2>
+		    <form th:action="@{/top}" 	th:object="${userAddRequest}" th:method="post">
+				
+					
+		        <label for="username">氏名</label><br>
+		        <input type="text" id="username" name="username" required><br>
+		        <label for="email">メールアドレス</label><br>
+		        <input type="email" id="email" name="email" required><br>
+		        <label for="password">パスワード</label><br>
+		        <input type="password" id="password" name="password" required><br>
+		        <input type="submit" value="登録する">
+		    </form>
+			
+		</body>
+
+<footer>
+	<h2>portfolio site</h2>
+</footer>
+
+</html>
