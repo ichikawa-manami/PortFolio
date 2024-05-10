@@ -4,8 +4,21 @@
 	<head>
 	<title th:text="${title}"></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link th:href="@{/css/signin.css}" rel="stylesheet" />
 	</head>
 
+	<header>
+	<div class="header">
+		<div class="header-left">
+			<p>My PortFolio</p>
+		</div>
+		
+		<div class="header-right">
+			<a class="login" href="">ログイン</a>
+		</div>
+	</div>
+	</header>
+	
 <body>
     <div class="container">
         <div th:if="${validationError}" th:each="error : ${validationError}">
@@ -32,7 +45,7 @@
             <br />
             
 			<div class="text-center">
-                <input type="submit" value="登録" class="btn btn-primary">
+                <input type="submit" value="登録する" class="btn btn-primary">
             </div>
         </form>
     </div>
