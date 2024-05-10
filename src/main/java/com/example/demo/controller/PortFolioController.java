@@ -36,8 +36,8 @@ public class PortFolioController {
     
     @GetMapping(value = "/user/top")
     public String displaytop() {
-     
-        return "user/top";
+    	
+        return "/user/top";
     }
 	
     /**
@@ -46,8 +46,8 @@ public class PortFolioController {
      * @param model Model
      * @return ユーザー情報一覧画面
      */
-    @RequestMapping(value = "/user/signin", method = RequestMethod.POST)
-    public String create(@Validated @ModelAttribute UserAddRequest userRequest, BindingResult result, Model model) {
+    @RequestMapping(value = "/user/create", method = RequestMethod.POST)
+    public String create(@Validated @ModelAttribute UserAddRequest userAddRequest, BindingResult result, Model model) {
         if (result.hasErrors()) {
             // 入力チェックエラーの場合
             List<String> errorList = new ArrayList<String>();
@@ -58,10 +58,11 @@ public class PortFolioController {
             return "user/signin";
         }
         // ユーザー情報が登録できた場合
-        portFolioService.save(userRequest);
+        portFolioService.save(userAddRequest);
         return "redirect:/user/top"; //トップ画面へ遷移するように変更
     }
 	
 }
+
 
 
