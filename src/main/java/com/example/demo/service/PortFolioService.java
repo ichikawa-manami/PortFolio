@@ -16,8 +16,8 @@ public class PortFolioService {
      * ユーザ情報登録
      * @param userAddRequest リクエストデータ
      */
-    public void save(UserAddRequest userAddRequest) {
-        portFolioMapper.save(userAddRequest);
+    public void save(UserAddRequest userRequest) {
+        portFolioMapper.save(userRequest);
     }
 	
 
