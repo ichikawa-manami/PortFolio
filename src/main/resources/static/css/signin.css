@@ -1,20 +1,18 @@
 .header {
-	display: flex;
-	width: 1,440px;
-	height: 120px;
-	padding: 0px 40px 0px 40px;
-	gap: 0px;
-	justify-content: space-between;
-	align-items: center;
-	opacity: 0px;
+	width: 100%;
 	background: rgba(27, 86, 120, 1);
 
 }
 
-.header-left {
-	order: 1;
-
+.header-container {
+	max-width: 1440px;
+		height: 120px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin :auto;
 }
+
 span {
 	width: 201px;
 height: 42px;
@@ -30,9 +28,7 @@ color: rgba(255, 255, 255, 1);
 
 }
 
-.header-right {
-	order: 2;
-}
+
 
 .login-btn {
 	width: 152px;
@@ -46,73 +42,74 @@ background: rgba(255, 255, 255, 1);
 }
 
 .footer {
-	width: 1,440px;
-height: 40px;
-top: 984px;
-padding: 0px 40px 0px 40px;
-gap: 0px;
-justify-content: space-between;
-opacity: 0px;
-background: rgba(27, 86, 120, 1);
-
+width: 100%;
+position: fixed;
+bottom: 0;
+left: 0;
+color: rgba(255, 255, 255, 1);
 }
 
 .footerlogo {
-	  padding: 10px 0; /* 上下に余白を追加 */
-	width: 102px;
-height: 21px;
-gap: 0px;
-opacity: 0px;
+width: 100%;
+height: 40px;
+display: flex;
+justify-content: center;
+background: rgba(27, 86, 120, 1);
 font-family: Roboto;
 font-size: 18px;
 font-weight: 400;
 line-height: 21.09px;
-text-align: center;
+align-items: center;
 color: rgba(255, 255, 255, 1);
 
 }
 
 .container {
-	justify-content: center;
-	align-items: center;
+	margin: 0 auto;
 	width: 480px;
-height: 341px;
-top: 324px;
-left: 480px;
-gap: 48px;
-opacity: 0px;
-
 }
 
+.form-control {
+	border: 1px solid #5b5b5b;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	display: block;
+	width: 100%;
+	padding: 10px 0;
+	outline: none;
+}
+
+
 .form-group {
-	margin: 0 10px;
-    padding: 10px; 
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
+width:480px;
+	display: inline-block;
+	margin-bottom: 40px;
+	position: relative;
 }
 
 .text-center {
-	width:232px;
-height: 53px;
-padding: 16px 80px 16px 80px;
-gap: 0px;
-border-radius: 4px 0px 0px 0px;
-opacity: 0px;
-background: rgba(27, 86, 120, 1);
-
+	padding: 10px 0;
+	text-align: center;
 }
 
+.signinbtn {
+width:232px;
+height: 53px;
+padding: 16px 80px 16px 80px;
+border-radius: 4px 0px 0px 0px;
+background: rgba(27, 86, 120, 1);	
+color: rgba(255, 255, 255, 1);
+font-size: 16qx;
+cursor: pointer;
+}
+
+
+
 h1 {
-	width: 144px;
-height: 48px;
-top: 200px;
-left: 648px;
-gap: 0px;
-opacity: 0px;
 font-family: Roboto;
 font-size: 36px;
 font-weight: 400;
-line-height: 48.02px;
 text-align: center;
 
 }

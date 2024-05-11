@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+
 import com.example.demo.dto.UserAddRequest;
 import com.example.demo.service.PortFolioService;
 
+@RequestMapping("/")
 @Controller
 public class PortFolioController {
 	
@@ -46,8 +48,9 @@ public class PortFolioController {
      * @param model Model
      * @return ユーザー情報一覧画面
      */
-    @RequestMapping(value = "/user/create", method = RequestMethod.POST)
-    public String create(@Validated @ModelAttribute UserAddRequest userRequest, BindingResult result, Model model) {
+    @RequestMapping(value = "/user/signin", method = RequestMethod.POST)
+    public String create(@Validated @ModelAttribute UserAddRequest userRequest, BindingResult result, Model model)
+   {
         if (result.hasErrors()) {
             // 入力チェックエラーの場合
             List<String> errorList = new ArrayList<String>();
