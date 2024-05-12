@@ -2,33 +2,33 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 	<head>
-	<title th:text="${title}"></title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link th:href="@{/css/signin.css}" rel="stylesheet" />
+		<title th:text="${title}"></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link th:href="@{/css/signin.css}" rel="stylesheet" />
 	</head>
 
-	<header>
-	<div class="header">
-		<div class="header-container">
-		<div>
-			<span>My PortFolio</span>
-		</div>
-		<div>
-		<button class="login-btn">ログイン</button>
-		</div>
-		</div>
-	</div>
-	</header>
+
 	
 <body>
+	
+	<header>
+		<div class="header">
+			<div class="header-container">
+				<div><span>My PortFolio</span></div>
+				<div>
+					<button class="login-btn">ログイン</button>
+				</div>
+			</div>
+		</div>
+	</header>
+	
     <div class="container">
         <div th:if="${validationError}" th:each="error : ${validationError}">
             <label class="text-danger" th:text="${error}"></label>
         </div>
-        <h1>新規登録</h1>
+        	<h1>新規登録</h1>
         <form th:action="@{/user/signin}" th:object="${userAddRequest}" th:method="post">
-            
-			
+	
 			<div class="form-group">
                 <label>氏名</label>
                 <input type="text" th:field="*{name}" class="form-control">
@@ -54,10 +54,8 @@
 
 <footer>
 	<div class="footer">
-	<div class="footerlogo">portfolio site</div>
-	
+		<div class="footerlogo">portfolio site</div>
 	</div>
 </footer>
-
 
 </html>
