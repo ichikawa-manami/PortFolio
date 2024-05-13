@@ -11,14 +11,10 @@ import lombok.Data;
 
 
 /**
- * ユーザー情報登録 リクエストデータ
+ * ユーザー リクエストデータ
  */
 @Data
-public class UserAddRequest implements Serializable {
-
-    @NotEmpty(message = "名前は必ず入力してください")
-    @Size(max = 255, message = "名前は255文字以内で入力してください")
-    private String name;
+public class UserSearchRequest implements Serializable {
     /**
      * パスワード
      */
@@ -34,7 +30,4 @@ public class UserAddRequest implements Serializable {
     @Pattern(regexp = "^(([a-zA-Z0-9])+([a-zA-Z0-9\\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\\._-]+)+)*$", 
     message = "メールアドレスが正しい形式ではありません")
     private String email;
-    
-    @Size(max = 200, message = "自己紹介文は200文字以内で入力してください")
-    private String self_introduction;
 }

@@ -2,6 +2,7 @@ package com.example.demo.entity;
 
 import java.io.Serializable;
 
+
 import java.util.Date;
 
 import lombok.Data;
@@ -31,6 +32,5 @@ public class PortFolio implements Serializable{
 
     //更新日時
     private Date updated_at;
-	
-
+  	
 }
