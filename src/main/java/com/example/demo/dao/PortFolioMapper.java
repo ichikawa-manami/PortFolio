@@ -13,5 +13,7 @@ public interface PortFolioMapper {
      * @param userRequest 登録用リクエストデータ
      */
     void save(UserAddRequest userRequest);
+    
+    PortFolio findByName(String name);
 
 }
