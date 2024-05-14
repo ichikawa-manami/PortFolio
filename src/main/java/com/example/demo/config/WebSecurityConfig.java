@@ -20,20 +20,20 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     	
         http.formLogin(login -> login
-                .loginProcessingUrl("/user/login")
+                .loginProcessingUrl("/user/login?now")
                 .loginPage("/user/login")
-                .defaultSuccessUrl("/user/top")
+                .defaultSuccessUrl("/user/top",true)
                 .failureUrl("/user/login?error")
                 .permitAll()
 				.usernameParameter("name")
 				.passwordParameter("password")
         ).logout(logout -> logout
+        		.logoutUrl("/user/logout") 
                 .logoutSuccessUrl("/user/login")
         ).authorizeHttpRequests(authz -> authz
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-                .requestMatchers("/user/**").permitAll()
-                .requestMatchers("/user/general").hasRole("GENERAL")
-                .requestMatchers("/user/admin").hasRole("ADMIN")
+                .requestMatchers("/user/signin","/user/login","/user/top").permitAll()
+                .requestMatchers("/css/**").permitAll()
                 .anyRequest().authenticated()
         );
         return http.build();
@@ -44,6 +44,5 @@ public class WebSecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-    
 }
 

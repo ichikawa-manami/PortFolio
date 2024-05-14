@@ -11,7 +11,7 @@ import com.example.demo.entity.PortFolio;
 public class DemoUserDetails implements UserDetails {
 
   // 先ほど作成したentity.Userをフィールドに持ってくる
-  private final PortFolio portFolio;
+  private PortFolio portFolio;
 	
 	public DemoUserDetails(PortFolio user) {
 		super();

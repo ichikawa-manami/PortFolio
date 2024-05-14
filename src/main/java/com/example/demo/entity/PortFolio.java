@@ -2,12 +2,15 @@ package com.example.demo.entity;
 
 import java.io.Serializable;
 
+
 import java.util.Date;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 //ユーザー情報 Entity
 @Data
+@AllArgsConstructor
 public class PortFolio implements Serializable{
 	
 	
