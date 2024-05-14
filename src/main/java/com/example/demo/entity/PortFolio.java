@@ -31,6 +31,7 @@ public class PortFolio implements Serializable{
 
     //更新日時
     private Date updated_at;
-	
+    
 
 }
+
